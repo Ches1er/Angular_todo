@@ -1,0 +1,16 @@
+<div class="addnote">
+  <dl>
+    <dt>name:</dt>
+    <dd><input type="text" [(ngModel)]="newNote.name"></dd>
+    <dt>description:</dt>
+    <dd><textarea [(ngModel)]="newNote.description"></textarea></dd>
+    <button (click)="addNote()">add</button>
+  </dl>
+</div>
+<div class="notes">
+  <app-todo-list-item *ngFor="let note of notes" [note]="note"
+                      (onDeleteNote)="deleteNote($event)"
+                      (onShowNote)="showNote($event)"
+                      (click)="sendToParent()">
+  </app-todo-list-item>
+</div>

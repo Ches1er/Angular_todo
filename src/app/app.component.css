@@ -1,0 +1,13 @@
+.container{
+    display: table;
+    width: 100%;
+}
+.container .panel{
+    width: 50%;
+    display: table-cell;
+    padding: 10px;
+    background-color: #cccccc;
+}
+.container .panel:first-child{
+    border-right: 1px solid gray;
+}

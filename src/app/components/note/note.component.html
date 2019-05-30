@@ -1,0 +1,9 @@
+<ng-container *ngIf="note">
+  <p class="note_description" >{{note.pDescription}}</p>
+  <ng-template *ngIf="note.pState">
+    State:<input type="checkbox" checked [(ngModel)]="state" (change)="saveDoneNote()">
+  </ng-template>
+    State:<input type="checkbox" [(ngModel)]="state" (change)="saveDoneNote()">
+</ng-container>
+
+
