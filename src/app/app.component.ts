@@ -8,11 +8,10 @@ import {Note} from './models/note';
 
 
       <div class="panel">
-        <app-todo-list (outToParent)="receiveFromChild($event)">
-        </app-todo-list>
+        <app-todo-list></app-todo-list>
       </div>
       <div class="panel">
-        <app-note [note]="showedNote"></app-note>
+        <app-note></app-note>
       </div>
     </div>
   `,
@@ -20,15 +19,6 @@ import {Note} from './models/note';
 })
 export class AppComponent {
 
-  private pShowedNote: Note = null;
   title = 'ng01';
 
-
-  get showedNote(): Note {
-    return this.pShowedNote;
-  }
-
-  receiveFromChild(note: Note) {
-    this.pShowedNote = note;
-  }
 }

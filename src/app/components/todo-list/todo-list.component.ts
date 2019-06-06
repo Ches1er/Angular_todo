@@ -10,7 +10,7 @@ import {NoteService} from '../../services/note.service';
 export class TodoListComponent implements OnInit {
   newNote = new Note('', '');
   notes: Array<Note>;
-  showedNote: Note = null;
+
   @Output() public outToParent: EventEmitter<Note> = new EventEmitter<Note>();
 
   constructor(@Inject(NoteService) private noteService: NoteService) {
@@ -31,11 +31,7 @@ export class TodoListComponent implements OnInit {
   }
 
   showNote(note: Note) {
-    this.showedNote = note;
-    console.log(this.showedNote.pState);
+    this.noteService.setShowedNote(note);
   }
 
-  sendToParent() {
-    this.outToParent.emit(this.showedNote);
-  }
 }

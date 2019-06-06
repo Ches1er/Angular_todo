@@ -11,6 +11,6 @@
   <app-todo-list-item *ngFor="let note of notes" [note]="note"
                       (onDeleteNote)="deleteNote($event)"
                       (onShowNote)="showNote($event)"
-                      (click)="sendToParent()">
+                      >
   </app-todo-list-item>
 </div>
